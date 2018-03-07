@@ -19,14 +19,13 @@ yum install net-tools -y && yum install curl -y;
 fi
 echo -e "\e[31;43m*****DISABLE IPV6 *****\e[0m"
 sysctl -w net.ipv6.conf.all.disable_ipv6=1
-sleep 10s
 #publicip=curl icanhazip.com
 publicip=$(curl icanhazip.com)
 if [ -e '/usr/bin/nmap' ]; then
 echo -e "\e[31;43m*****CHECK MEMCACHED PORT STATUS *****\e[0m" && nmap -p 11211 $publicip
  else
 yum install nmap -y && echo -e "\e[31;43m*****CHECK MEMCACHED PORT STATUS *****\e[0m" && nmap -p 11211 $publicip
-sleep 10s
+sleep 15s
 fi
 if [ -e '/etc/csf/csf.conf' ]; then
 service csf status >> /tmp/csf.txt
