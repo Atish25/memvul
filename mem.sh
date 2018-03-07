@@ -27,7 +27,7 @@ echo -e "\e[31;43m*****CHECK MEMCACHED PORT STATUS *****\e[0m" && nmap -p 11211 
 yum install nmap -y && echo -e "\e[31;43m*****CHECK MEMCACHED PORT STATUS *****\e[0m" && nmap -p 11211 $publicip
 sleep 15s
 fi
-rm -rf /usr/src/csf.tgz.1
+rm -rf /usr/src/csf.tgz
 if [ -e '/etc/csf/csf.conf' ]; then
 service csf status >> /tmp/csf.txt
 grep -q "inactive" /tmp/csf.txt
