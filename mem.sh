@@ -67,7 +67,7 @@ fi
 else
 echo -e "\e[31;43m*** ITS A CLI SERVER ****\e[0m"
 rm -rf /tmp/csf.txt && memcache.sh
-rm -f memcache.sh
+rm -f mem.sh
 if [ -e '/usr/bin/nmap' ]; then
 echo -e "\e[31;43m*****CHECK MEMCACHED PORT STATUS *****\e[0m" && nmap -p 11211 $publicip
  else
