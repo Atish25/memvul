@@ -1,6 +1,6 @@
 #!/bin/sh
 #!/bin/bash
-echo -e "\e[31;43m**Disable Memcache (SERVER SUPPORT TEAM - CISPL) *****\e[0m"
+echo -e "\e[31;43m**Disable Memcache (Written in Bash By Atish Das) *****\e[0m"
 #
 if [ -e '/usr/bin/memcached' ]; then
 service memcached restart && chkconfig memcached on;
@@ -43,13 +43,7 @@ ex -sc '%s/AUTO_UPDATES = "1"/AUTO_UPDATES = "0"/g|x' /etc/csf/csf.conf
 ex -sc '%s/TCP_IN = "20,21,22,25,53,80,110,143,443,465,587,993,995,2077,2078,2079,2080,2082,2083,2086,2087,2095,2096"/TCP_IN = "20,21,22,25,53,80,110,143,443,465,587,993,995,2077,2078,2079,2080,2083,2087,49152:65534,2096"/g|x' /etc/csf/csf.conf
 ex -sc '%s/TCP_OUT = "20,21,22,25,37,43,53,80,110,113,443,587,873,993,995,2086,2087,2089,2703"/TCP_OUT = "20,21,22,25,37,43,53,80,110,113,443,587,873,993,995,2086,2087,2089,2703,49152:65534,2096"/g|x' /etc/csf/csf.conf
 cat <<EOT >> /etc/csf/csf.allow
-180.87.240.74/29
-111.93.172.122/29
-103.250.86.42/29
-118.185.76.18/29
-203.171.33.10
-api.konnektive.com
-80.248.30.132
+Put your public ip
 EOT
 ex -sc '%s/TESTING = "1"/"TESTING = "0"/g|x' /etc/csf/csf.conf && service csf start
 service csf start
