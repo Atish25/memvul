@@ -43,7 +43,7 @@ ex -sc '%s/AUTO_UPDATES = "1"/AUTO_UPDATES = "0"/g|x' /etc/csf/csf.conf
 ex -sc '%s/TCP_IN = "20,21,22,25,53,80,110,143,443,465,587,993,995,2077,2078,2079,2080,2082,2083,2086,2087,2095,2096"/TCP_IN = "20,21,22,25,53,80,110,143,443,465,587,993,995,2077,2078,2079,2080,2083,2087,49152:65534,2096"/g|x' /etc/csf/csf.conf
 ex -sc '%s/TCP_OUT = "20,21,22,25,37,43,53,80,110,113,443,587,873,993,995,2086,2087,2089,2703"/TCP_OUT = "20,21,22,25,37,43,53,80,110,113,443,587,873,993,995,2086,2087,2089,2703,49152:65534,2096"/g|x' /etc/csf/csf.conf
 cat <<EOT >> /etc/csf/csf.allow
-Put your public ip
+####Put your public ip#####
 EOT
 ex -sc '%s/TESTING = "1"/"TESTING = "0"/g|x' /etc/csf/csf.conf && service csf start
 service csf start
